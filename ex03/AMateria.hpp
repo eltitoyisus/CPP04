@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:42:38 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/15 12:42:38 by jramos-a         ###   ########.fr       */
+/*   Updated: 2025/07/16 11:58:53 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
-
-class ICharacter;
 
 class AMateria {
 	protected:

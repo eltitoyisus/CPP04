@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:42:41 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/15 12:42:41 by jramos-a         ###   ########.fr       */
+/*   Updated: 2025/07/16 09:57:54 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ AMateria::AMateria(const AMateria& other) {
 	_type = other._type;
 }
 
-AMateria& oprator=(const AMateria& other) {
+AMateria& AMateria::operator=(const AMateria& other) {
 	std::cout << "AMateria assigned." << std::endl;
 	if (this != &other) {
 		_type = other._type;

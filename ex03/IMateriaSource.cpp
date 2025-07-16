@@ -3,23 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:21:07 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/15 13:21:07 by jramos-a         ###   ########.fr       */
+/*   Updated: 2025/07/16 09:59:08 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_CPP
-# define IMATERIASOURCE_CPP
-
 #include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class IMateriaSource {
-	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
-};
+//make inventory
 
-#endif
+void learnMateria(AMateria* materia) {
+	if (materia == nullptr) {
+		std::cerr << "Error: Cannot learn null materia." << std::endl;
+		return;
+	}
+	std::cout << "Learning materia: " << materia->getType() << std::endl;
+	inventory.push_back(materia);
+}
+
+AMateria* createMateria(std::string const & type) {
+	if (type == "ice") {
+		return new Ice();
+	} else if (type == "cure") {
+		return new Cure();
+	} else {
+		std::cerr << "Error: Unknown materia type." << std::endl;
+		return nullptr;
+	}
+}
+
+IMateriaSource::~IMateriaSource() {
+	std::cout << "IMateriaSource destructor called." << std::endl;
+}
+

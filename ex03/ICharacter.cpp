@@ -3,17 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:19:19 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/15 13:19:19 by jramos-a         ###   ########.fr       */
+/*   Updated: 2025/07/16 09:56:11 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ICHARACTER_H
+# define ICHARACTER_H
 
 #include "ICharacter.hpp"
 
 std::string const & ICharacter::getName() const {
 	static std::string name = "Default Character";
+	if (_cname != "Default Character")
+		return _cname;
 	return name;
 }
 
@@ -36,6 +41,8 @@ void ICharacter::use(int idx, ICharacter& target) {
 		std::cout << "* uses unknown materia on " << target.getName() << " *" << std::endl; 
 }
 
-Icharacter::~ICharacter() {
+ICharacter::~ICharacter() {
 	std::cout << "ICharacter destructor called" << std::endl;
 }
+
+#endif

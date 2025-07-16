@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:40:58 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/15 12:40:58 by jramos-a         ###   ########.fr       */
+/*   Updated: 2025/07/16 13:44:07 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "ICharacter.hpp"
 
 int main()
 {

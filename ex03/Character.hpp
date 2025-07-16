@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 22:13:07 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/16 09:46:46 by jramos-a         ###   ########.fr       */
+/*   Created: 2025/07/16 09:13:47 by jramos-a          #+#    #+#             */
+/*   Updated: 2025/07/16 13:31:43 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_H
-# define CURE_H
+#ifndef CHARACTER_H
+# define CHARACTER_H
 
+#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Cure : public AMateria {
+class Character : public ICharacter {
 	public:
-		Cure();
-		Cure(const Cure& other);
-		Cure& operator=(const Cure& other);
-		~Cure();
-
-		AMateria* clone() const;
-		void use(ICharacter& target);
+		// Character();
+		Character(std::string cname);
+		Character(const Character& other);
+		Character& operator=(const Character& other);
+		~Character();
+		
+	protected:
+		std::string _cname;
 };
 
 #endif

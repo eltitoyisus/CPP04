@@ -3,27 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 22:12:26 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/15 22:12:26 by jramos-a         ###   ########.fr       */
+/*   Updated: 2025/07/16 09:46:50 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
 
-#include "AMateria.hpp"
+#include "Cure.hpp"
 
-class Cure : public AMateria {
-	public:
-		Cure();
-		Cure(const Cure& other);
-		Cure& operator=(const Cure& other);
-		~Cure();
+Cure::Cure() : AMateria("cure") {
+	std::cout << "Cure constructed" << std::endl;
+}
 
-		AMateria* clone() const;
-		void use(ICharacter& target);
-};
+Cure::Cure(const Cure& other) : AMateria(other) {
+	std::cout << "Cure copy constructed" << std::endl;
+}
 
-#endif
+Cure& Cure::operator=(const Cure& other) {
+	std::cout << "Cure assigned" << std::endl;
+	if (this != &other) {
+		AMateria::operator=(other);
+	}
+	return *this;
+}
+
+Cure::~Cure() {
+	std::cout << "Cure destructor called" << std::endl;
+}
+
+AMateria* Cure::clone() const {
+	return new Cure(*this);
+}
+
+void Cure::use(ICharacter& target) {
+	std::cout << "Cure used on " << target.getName() << std::endl;
+}

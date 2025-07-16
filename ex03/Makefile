@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+         #
+#    By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/15 12:40:48 by jramos-a          #+#    #+#              #
-#    Updated: 2025/07/15 12:40:48 by jramos-a         ###   ########.fr        #
+#    Updated: 2025/07/16 09:49:35 by jramos-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,15 @@ CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
 OBJS = $(SRCS:.cpp=.o)
 
-SRCS = main.cpp AMateria.cpp MateriaSource.cpp IMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp IMateriaSource.cpp \
+SRCS = main.cpp			\
+	AMateria.cpp		\
+	MateriaSource.cpp	\
+	IMateria.cpp		\
+	Cure.cpp			\
+	Ice.cpp				\
+	ICharacter.cpp		\
+	IMateriaSource.cpp	\
+	Character.cpp
 
 all: $(NAME)
 
