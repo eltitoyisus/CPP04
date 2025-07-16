@@ -1,0 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/15 13:24:32 by jramos-a          #+#    #+#             */
+/*   Updated: 2025/07/15 13:24:32 by jramos-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
+
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+
+void learnMateria(AMateria* materia) {
+	if (materia == nullptr) {
+		std::cerr << "Error: Cannot learn null materia." << std::endl;
+		return;
+	}
+	std::cout << "Learning materia: " << materia->getType() << std::endl;
+	inventory.push_back(materia);
+}
+
+AMateria* createMateria(std::string const & type) {
+	if (type == "ice") {
+		return new Ice();
+	} else if (type == "cure") {
+		return new Cure();
+	} else {
+		std::cerr << "Error: Unknown materia type." << std::endl;
+		return nullptr;
+	}
+}
+
+IMateriaSource::~IMateriaSource() {
+	std::cout << "IMateriaSource destructor called." << std::endl;
+}
+
+#endif
