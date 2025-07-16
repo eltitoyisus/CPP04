@@ -21,7 +21,7 @@ MateriaSource::MateriaSource() : _count(0) {
 
 MateriaSource::MateriaSource(const MateriaSource& other) {
 	_count = other._count;
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 4; ++i) // if other._inventory = true clone, if false, _inventory = NULL
 		_inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : NULL;
 }
 

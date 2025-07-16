@@ -13,25 +13,18 @@
 #include "Ice.hpp"
 #include "ICharacter.hpp"
 
-Ice::Ice() : AMateria("ice") {
-	std::cout << "Ice default constructor called" << std::endl;
-}
+Ice::Ice() : AMateria("ice") {}
 
-Ice::Ice(const Ice& other) : AMateria(other) {
-	std::cout << "Ice copy constructor called" << std::endl;
-}
+Ice::Ice(const Ice& other) : AMateria(other) {}
 
 Ice& Ice::operator=(const Ice& other) {
-	std::cout << "Ice assingment operator called" << std::endl;
 	if (this != &other) {
 		AMateria::operator=(other);
 	}
 	return *this;
 }
 
-Ice::~Ice() {
-	std::cout << "Ice destructor called" << std::endl;
-}
+Ice::~Ice() {}
 
 AMateria* Ice::clone() const {
 	return new Ice(*this);
