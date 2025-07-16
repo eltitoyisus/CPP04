@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 
-Ice::Ice() {
+Ice::Ice() : AMateria("ice") {
 	std::cout << "Ice default constructor called" << std::endl;
 }
 
@@ -22,9 +23,8 @@ Ice::Ice(const Ice& other) : AMateria(other) {
 
 Ice& Ice::operator=(const Ice& other) {
 	std::cout << "Ice assingment operator called" << std::endl;
-	if (this != other) {
+	if (this != &other) {
 		AMateria::operator=(other);
-		std::cout << "Ice assignment operator called" << std::endl;
 	}
 	return *this;
 }
@@ -38,5 +38,5 @@ AMateria* Ice::clone() const {
 }
 
 void Ice::use(ICharacter& target) {
-	std::cout << "Ice used on " << target.getName() << std::endl;
+	std::cout << "* shoots an icebolt at " << target.getName() << " *" << std::endl;
 }

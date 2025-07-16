@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+         #
+#    By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/15 12:40:48 by jramos-a          #+#    #+#              #
-#    Updated: 2025/07/16 09:49:35 by jramos-a         ###   ########.fr        #
+#    Updated: 2025/07/16 14:11:53 by jramos-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ OBJS = $(SRCS:.cpp=.o)
 SRCS = main.cpp			\
 	AMateria.cpp		\
 	MateriaSource.cpp	\
-	IMateria.cpp		\
 	Cure.cpp			\
 	Ice.cpp				\
 	ICharacter.cpp		\

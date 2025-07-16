@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:42:41 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/16 09:57:54 by jramos-a         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:49:49 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria() {
 	std::cout << "AMateria default constructed." << std::endl;
@@ -34,19 +35,12 @@ AMateria::~AMateria() {
 	std::cout << "AMateria of type " << _type << " destroyed." << std::endl;
 }
 
-
-
 AMateria::AMateria(std::string const & type) : _type(type) {
 	std::cout << "AMateria of type " << _type << " constructed." << std::endl;
 }
 
 std::string const & AMateria::getType() const {
 	return _type;
-}
-
-AMateria* AMateria::clone() const {
-	std::cout << "Cloning AMateria of type " << _type << "." << std::endl;
-	return new AMateria(*this);
 }
 
 void AMateria::use(ICharacter& target) {

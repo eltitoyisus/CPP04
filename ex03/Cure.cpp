@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jramos-a <jramos-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 22:12:26 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/16 09:46:50 by jramos-a         ###   ########.fr       */
+/*   Updated: 2025/07/16 15:37:59 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
 Cure::Cure() : AMateria("cure") {
 	std::cout << "Cure constructed" << std::endl;
@@ -38,5 +38,5 @@ AMateria* Cure::clone() const {
 }
 
 void Cure::use(ICharacter& target) {
-	std::cout << "Cure used on " << target.getName() << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds. *" << std::endl;
 }

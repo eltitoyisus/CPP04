@@ -16,20 +16,20 @@
 
 MateriaSource::MateriaSource() : _count(0) {
 	for (int i = 0; i < 4; ++i)
-		_inventory[i] = nullptr;
+		_inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other) {
 	_count = other._count;
 	for (int i = 0; i < 4; ++i)
-		_inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : nullptr;
+		_inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : NULL;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 	if (this != &other) {
 		for (int i = 0; i < 4; ++i) {
 			delete _inventory[i];
-			_inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : nullptr;
+			_inventory[i] = other._inventory[i] ? other._inventory[i]->clone() : NULL;
 		}
 		_count = other._count;
 	}
@@ -51,5 +51,5 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
 		if (_inventory[i] && _inventory[i]->getType() == type)
 			return _inventory[i]->clone();
 	}
-	return nullptr;
+	return NULL;
 }
