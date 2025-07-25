@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 15:51:42 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/14 15:51:42 by jramos-a         ###   ########.fr       */
+/*   Created: 2025/07/25 13:48:27 by jramos-a          #+#    #+#             */
+/*   Updated: 2025/07/25 13:48:27 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal() {
-	_type = "random animal";
-}
+WrongAnimal::WrongAnimal() : _type("WrongAnimal") {}
 
-Animal::Animal(const Animal& other) {
+WrongAnimal::WrongAnimal(const WrongAnimal& other) {
 	*this = other;
 }
 
-Animal& Animal::operator=(const Animal& other) {
-	if (this != &other) {
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other) {
+	if (this != &other)
 		_type = other._type;
-	}
 	return *this;
 }
 
-Animal::~Animal() {}
+WrongAnimal::~WrongAnimal() {}
 
-std::string Animal::getType() const {
-	return _type;
+void WrongAnimal::makeSound() const {
+	std::cout << "Some wrong generic animal sound" << std::endl;
 }
 
-void Animal::makeSound() const {
-	std::cout << "generic animal noise" << std::endl;
+std::string WrongAnimal::getType() const {
+	return _type;
 }

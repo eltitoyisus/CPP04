@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 15:51:43 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/14 15:51:43 by jramos-a         ###   ########.fr       */
+/*   Created: 2025/07/25 13:46:17 by jramos-a          #+#    #+#             */
+/*   Updated: 2025/07/25 13:46:17 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#include "Dog.hpp"
 
-#include <iostream>
+Dog::Dog() {
+	_type = "Dog";
+}
 
-class Animal {
-	public:
-		Animal();
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
-		virtual ~Animal();
-		virtual void makeSound() const;
-		std::string getType() const;
+Dog::Dog(const Dog& other) : Animal(other) {}
 
-	protected:
-		std::string _type;
-};
+Dog& Dog::operator=(const Dog& other) {
+	if (this != &other) {
+		_type = other._type;
+	}
+	return *this;
+}
 
-#endif
+Dog::~Dog() {}
+
+void Dog::makeSound() const {
+	std::cout << "Woof!" << std::endl;
+}

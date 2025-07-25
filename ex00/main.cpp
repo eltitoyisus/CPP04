@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main() {
 	std::cout << "=== Proper Polymorphism ===" << std::endl;
@@ -23,6 +27,10 @@ int main() {
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+
+	delete meta;
+	delete j;
+	delete i;
 
 	std::cout << "\n=== Wrong Polymorphism ===" << std::endl;
 	const WrongAnimal* wrong = new WrongAnimal();

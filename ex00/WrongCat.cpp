@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jramos-a <jramos-a@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 15:51:43 by jramos-a          #+#    #+#             */
-/*   Updated: 2025/07/14 15:51:43 by jramos-a         ###   ########.fr       */
+/*   Created: 2025/07/25 13:49:47 by jramos-a          #+#    #+#             */
+/*   Updated: 2025/07/25 13:49:47 by jramos-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#include "WrongCat.hpp"
 
-#include <iostream>
+WrongCat::WrongCat() {
+	_type = "WrongCat";
+}
 
-class Animal {
-	public:
-		Animal();
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
-		virtual ~Animal();
-		virtual void makeSound() const;
-		std::string getType() const;
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {}
 
-	protected:
-		std::string _type;
-};
+WrongCat& WrongCat::operator=(const WrongCat& other) {
+	if (this != &other) {
+		_type = other._type;
+	}
+	return *this;
+}
 
-#endif
+WrongCat::~WrongCat() {}
+
+void WrongCat::makeSound() const {
+	std::cout << "Meow? (but wrong)" << std::endl;
+}
